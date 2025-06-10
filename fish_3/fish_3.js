@@ -1,0 +1,22 @@
+import { Fish, Vector2D, FISH_TYPES } from '../common/fish.js';
+
+(function() {
+    const fish1Container = document.querySelector('.container');
+    const fish1Width = fish1Container.offsetWidth;
+    const fish1Height = fish1Container.offsetHeight;
+
+    const fish1 = new Fish(
+        new Vector2D(fish1Width/2, fish1Height/2),
+        FISH_TYPES.SALMON,
+        'fish_3/3.png',
+        100,100
+    );
+
+    function animateFish1() {
+        const deltaTime = 1 / 60;
+        fish1.update(deltaTime, [], [], [], [0, fish1Width, 0, fish1Height], []);
+        requestAnimationFrame(animateFish1);
+    }
+
+    animateFish1();
+})(); 
