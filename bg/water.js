@@ -59,7 +59,7 @@ gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
 const tex = gl.createTexture();
 const img = new window.Image();
-img.src = '../bg/bg_2.png';
+img.src = 'bg/bg_2.png';
 img.onload = () => {
     gl.bindTexture(gl.TEXTURE_2D, tex);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
